@@ -1,0 +1,42 @@
+# System files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.bak
+~*
+
+# IDE specific files
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS generated files
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# Dependency directories
+node_modules/
+bower_components/
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
+
+# Environment files
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Build directories
+dist/
+build/
+out/
