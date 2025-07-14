@@ -8,23 +8,11 @@ pipeline {
       }
     }
 
-    stage('Deploy with Apache') {
+    stage('Deploy to Apache (host)') {
       steps {
         script {
           sh '''
-mkdir -p deploy
-cp basic.html deploy/
-
-cat <<EOF > deploy/Dockerfile
-FROM httpd:alpine
-COPY basic.html /usr/local/apache2/htdocs/index.html
-EOF
-
-cd deploy
-docker build -t html-site .
-docker stop html-container || true
-docker rm html-container || true
-docker run -d --name html-container -p 8081:80 --network jenkins-net html-site
+            sudo cp basic.html /var/www/html/index.html
           '''
         }
       }
