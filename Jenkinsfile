@@ -13,10 +13,10 @@ pipeline {
         script {
           sh '''
             mkdir -p deploy
-            cp index.html deploy/
+            cp basic.html deploy/
             cat <<EOF > deploy/Dockerfile
             FROM httpd:alpine
-            COPY index.html /usr/local/apache2/htdocs/
+            COPY basic.html /usr/local/apache2/htdocs/index.html
             EOF
 
             cd deploy
