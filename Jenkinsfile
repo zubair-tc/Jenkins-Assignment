@@ -6,11 +6,15 @@ pipeline {
     }
 
     stages {
-        stage('Checkout') {
-            steps {
-                git branch: 'main', url: 'https://github.com/zubair-tc/JenkinsTask.git'
-            }
-        }
+       stage('Checkout') {
+    steps {
+        git(
+            branch: 'main',
+            url: 'git@github.com:zubair-tc/JenkinsTask.git',
+            credentialsId: 'JENKINS_USER_SSH_KEY' 
+        )
+    }
+}
 
         stage('Lint HTML') {
             steps {
