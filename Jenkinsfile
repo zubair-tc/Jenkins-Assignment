@@ -22,8 +22,8 @@ pipeline {
 
         stage('Deploy to Apache') {
             steps {
-                       sh echo "Deploying HTML to Apache..."
-                       sh sudo cp basic.html $DEPLOY_PATH    
+                sh 'echo "Deploying HTML to Apache..."'
+                sh "sudo cp basic.html $DEPLOY_PATH"  // Double quotes for variable expansion
             }
         }
     }
